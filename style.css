@@ -212,7 +212,10 @@ ul {
   margin-bottom: 10px;
   color: #3b4d2c;
 }
-
+.typed-text{
+  color: #6b8e23;
+  font-weight: bold;
+}
 .hero-right p {
   font-size: 18px;
   margin-bottom: 20px;
@@ -391,6 +394,7 @@ section h2::after {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .contact-form button:hover {
@@ -580,3 +584,119 @@ img {
   height: auto;
   display: block;
 }
+/* Whole section background */
+.hire-section {
+  background-color: #2c4318; /* Olive Green */
+  padding: 100px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* White card inside the section */
+
+.hire-container {
+  background-color: #ffffff; /* White card */
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  color: #3b4d2c;
+}
+.hire-section h2{
+  color: white;
+  font-size: 2.5rem;
+}
+.hire-section p {
+  color: #eff0ee;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+/* Heading and paragraph */
+.hire-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+   color: #eff0ee;
+}
+
+.hire-container p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+/* Form styling */
+.hire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.hire-form input,
+.hire-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 16px;
+  border: 1.5px solid #3b4d2c;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+  color: #3b4d2c;
+  transition: all 0.3s ease;
+}
+
+.hire-form input:focus,
+.hire-form textarea:focus {
+  outline: none;
+  border-color: #637c48;
+  box-shadow: 0 0 8px rgba(59, 77, 44, 0.2);
+}
+
+.hire-form input::placeholder,
+.hire-form textarea::placeholder {
+  color: #999;
+}
+
+/* Button */
+.hire-form button {
+  background-color: #3b4d2c;
+  color: white;
+  padding: 14px 30px;
+  font-size: 1rem;
+  border: 2px solid #3b4d2c;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.hire-form button:hover {
+  background-color: #ffffff;
+  color: #3b4d2c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 77, 44, 0.2);
+}
+
+/* Back to portfolio link */
+.back-home {
+  margin-top: 25px;
+}
+
+.back-home a {
+  text-decoration: none;
+  color: #e8ede5;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.back-home a:hover {
+  color: #9fd268;
+}
+
