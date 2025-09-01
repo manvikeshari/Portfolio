@@ -8,15 +8,31 @@
 </head>
 <body>
   <section class="hire-section">
-    <h2>Hire Me</h2>
-    <p>If you have a project or want to collaborate, drop a message below.</p>
-    <form action="https://formspree.io/f/yourFormID" method="POST" class="hire-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p class="back-home"><a href="index.html">← Back to Portfolio</a></p>
-  </section>
+  <h2>Hire Me</h2>
+  <p>If you have a project or want to collaborate, drop a message below.</p>
+  <form id="contact-form-hire" class="hire-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p class="back-home"><a href="index.html">← Back to Portfolio</a></p>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("7mWBcHeu19Y-O-sCf"); 
+  })();
+
+  document.getElementById("contact-form-hire").addEventListener("submit", function(event) {
+    event.preventDefault();
+    emailjs.sendForm("service_inq5wv3", "template_9t8h3q7", this)
+      .then(() => { alert("✅ Message sent successfully!"); }, 
+            (error) => { alert("❌ Failed to send message."); console.error(error); });
+  });
+</script>
+
 </body>
 </html>
