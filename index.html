@@ -14,7 +14,7 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">MY PORTFOLIO</div>
-  <div class="nav-items" id="navItems">
+    <nav class="nav-items">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -23,25 +23,6 @@
         <li><a href="hire.html">Hire Me</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      </div>
-
-  <!-- Hamburger Icon -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navItems = document.getElementById("navItems");
-
-  hamburger.addEventListener("click", () => {
-    navItems.classList.toggle("show");
-    hamburger.classList.toggle("active");
-  });
-</script>
     </nav>
   </header>
 
@@ -49,7 +30,7 @@
   <section class="hero" id="home">
     <div class="hero-container">
       <div class="hero-left">
-        <img src="images/myphoto.jpg" alt="Manvi Photo" class="hero-image" />
+        <img src="Images/myphoto.jpg" alt="Manvi Photo" class="hero-image" />
       </div>
       <div class="hero-right">
         <h1>Hi, I am <span class="typed-text"></span></h1>
@@ -113,19 +94,19 @@
     <h2>My Projects</h2>
     <div class="project-container">
       <div class="project-card">
-        <img src="images/ecommerce.jpg" alt="E-commerce Website" />
+        <img src="Images/ecommerce.jpg" alt="E-commerce Website" />
         <h3>E-commerce Website</h3>
         <p>A responsive dressing website crafted with HTML, CSS & JS</p>
         <a href="#" class="github-btn">View Project</a>
       </div>
       <div class="project-card">
-        <img src="images/Portfolio.png" alt="Portfolio Website" />
+        <img src="Images/Portfolio.png" alt="Portfolio Website" />
         <h3>To-Do List Website</h3>
         <p>A resposive website made with HTML,CSS & JS</p>
-        <a href="https://manvikeshari.github.io/To-Do-List/" class="github-btn">View Project</a>
+        <a href="http://dailyworkdiary.netlify.app" class="github-btn">View Project</a>
       </div>
       <div class="project-card">
-        <img src="images/food.png" alt="Food Delivery Website" />
+        <img src="Images/food.png" alt="Food Delivery Website" />
         <h3>Food Delivery Website</h3>
         <p>A responsive food delivery website crafted with HTML, CSS & JS</p>
         <a href="http://thespicepalace.netlify.app" class="github-btn">View Project</a>
@@ -134,21 +115,37 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Let's Connect</h3>
-        <p>Email: <a href="mailto:manvikeshari06@gmail.com">manvikeshari06@gmail.com</a></p>
-      </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+ <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Let's Connect</h3>
+      <p>Email: <a href="mailto:manvikeshari06@gmail.com">manvikeshari06@gmail.com</a></p>
     </div>
-  </section>
+    <form id="contact-form-index" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("7mWBcHeu19Y-O-sCf"); // Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById("contact-form-index").addEventListener("submit", function(event) {
+    event.preventDefault();
+    emailjs.sendForm("service_inq5wv3", "template_9t8h3q7", this)
+      .then(() => { alert("✅ Message sent successfully!"); }, 
+            (error) => { alert("❌ Failed to send message."); console.error(error); });
+  });
+</script>
 
   <!-- Footer -->
   <footer class="footer">
