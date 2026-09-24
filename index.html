@@ -29,31 +29,39 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-container">
-      <div class="hero-left">
-        <img src="images/myphoto.jpg" alt="Manvi Photo" class="hero-image" />
-      </div>
       <div class="hero-right">
         <h1>Hi, I am <span class="typed-text"></span></h1>
-        <p>Frontend Developer
-          A motivated and detail-oriented tech enthusiast with a strong interest in data science and web development. I
-          enjoy creating practical, user-focused solutions through predictive models and intuitive web interfaces.</p>
+        <p>Frontend Developer. A motivated and detail-oriented tech enthusiast...</p>
         <div class="hero-buttons">
-          <a href="https://drive.google.com/file/d/1ciNSmCIIvgIJXx3j3immZqLqtn2sZw-Q/view?usp=drivesdk" class="button"
-            target="_blank">Download Resume</a>
+          <a href="#" class="button">Download Resume</a>
           <a href="hire.html" class="button hire-btn">Hire Me</a>
         </div>
+      </div>
+      <div class="hero-left">
+        <img src="images/ro.png" alt="Robot Mascot" class="hero-robot-image" />
       </div>
     </div>
   </section>
 
-
   <!-- About Section -->
   <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <div class="about-box">
-      <p>I’m a passionate tech enthusiast who loves solving problems using a mix of logic and creativity. With strong
-        interests in data science and web development, I’m committed to continuous learning and impactful contributions.
-      </p>
+    <div class="about-wrapper">
+      <div class="about-photo">
+        <img src="images/myphoto.jpg" alt="Manvi Keshari" />
+      </div>
+
+      <div class="about-content">
+        <h2>About Me</h2>
+        <div class="about-box">
+          <p>Hi, I'm Manvi — a B.Tech student passionate about building creative, user-friendly digital experiences. I
+            work with HTML, CSS, JavaScript, React, and SQL to craft responsive websites and applications that are both
+            functional and visually appealing.</p>
+          <p style="margin-top: 15px;">I love turning ideas into real projects, and I actively participate in hackathons
+            and collaborative work to sharpen my skills. My goal is to grow into a software developer who builds
+            solutions that make a meaningful impact — and I'm always chasing the next challenge that helps me get there.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -115,37 +123,36 @@
   </section>
 
   <!-- Contact Section -->
- <!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <div class="contact-container">
-    <div class="contact-info">
-      <h3>Let's Connect</h3>
-      <p>Email: <a href="mailto:manvikeshari06@gmail.com">manvikeshari06@gmail.com</a></p>
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Let's Connect</h3>
+        <p>Email: <a href="mailto:manvikeshari06@gmail.com">manvikeshari06@gmail.com</a></p>
+      </div>
+      <form id="contact-form-index" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-    <form id="contact-form-index" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+  </section>
 
-<!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("7mWBcHeu19Y-O-sCf"); // Replace with your EmailJS Public Key
-  })();
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("7mWBcHeu19Y-O-sCf");
+    })();
 
-  document.getElementById("contact-form-index").addEventListener("submit", function(event) {
-    event.preventDefault();
-    emailjs.sendForm("service_inq5wv3", "template_9t8h3q7", this)
-      .then(() => { alert("✅ Message sent successfully!"); }, 
-            (error) => { alert("❌ Failed to send message."); console.error(error); });
-  });
-</script>
+    document.getElementById("contact-form-index").addEventListener("submit", function (event) {
+      event.preventDefault();
+      emailjs.sendForm("service_inq5wv3", "template_9t8h3q7", this)
+        .then(() => { alert("✅ Message sent successfully!"); },
+          (error) => { alert("❌ Failed to send message."); console.error(error); });
+    });
+  </script>
 
   <!-- Footer -->
   <footer class="footer">
@@ -181,23 +188,8 @@
     </div>
   </footer>
 
-  <!-- Typing Animation Script -->
-  <script>
-    const text = "Manvi Keshari";
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        document.querySelector(".typed-text").textContent += text.charAt(i);
-        i++;
-        setTimeout(typing, 150);
-      }
-    }
-    window.onload = typing;
-  </script>
   <!-- Typed.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-  <!-- Typed effect config -->
   <script>
     var typed = new Typed(".typed-text", {
       strings: ["Manvi Keshari"],
